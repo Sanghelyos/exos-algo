@@ -1,0 +1,225 @@
+
+<meta charset="UTF-8">
+<style>
+    .title{
+        background-color: red; 
+        font-weight: bold;
+        color: white;
+        padding: 5px;
+        border-radius: 6px;
+    }
+    .custom-text{
+        font-weight: bold;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!--fonctions-->
+<!--Ces fonctions seront toujours utilisées si possible dans ce document-->
+<!--Les variables a et b de l'exercice 1 & 2 sont réutilisées dans les exercices 3, 4 et 7-->
+
+<script>
+function rand(min,max){     //fonction visant à simplifier la génération d'un nombre aléatoire (personnalisable)
+    return Math.round(Math.random() * (+max - +min) + +min)
+}
+   
+function randdix(){     //fonction visant à simplifier la génération d'un nombre aléatoire (de 0 à 10 uniquement)
+    return Math.round(Math.random()*10)
+}
+</script>
+
+
+<!------------->
+<!--Exo 1 & 2-->
+<!------------->
+
+<p class="title">EXO 1 & 2<br> ----- <br>Afficher le resultat le plus grand / Afficher le resultat le plus petit</p>
+
+<script>
+var a=randdix();
+var b=randdix();
+if (a<b){
+    document.write("<strong>b est le plus grand = </strong> " + b + "<br>");
+    document.write("<strong>a est le plus petit = </strong> " + a + "<br>");
+}
+else if (a>b){
+    document.write("<strong>a est le plus grand = </strong> " + a + "<br>");
+    document.write("<strong>b est le plus petit = </strong> " + b + "<br>");
+}
+else{
+    document.write("<strong>a et b sont égaux</strong><br>" + "<strong>a = </strong>" + a + "<br><strong>b = </strong>" + b);
+}
+</script>
+
+
+<!-------->
+<!--Exo3-->
+<!-------->
+
+<p class="title">EXO 3<br> ----- <br>Echanger le contenu de la variable a et b</p>
+
+<script>
+var temp=a;
+
+a=b;
+b=temp;
+
+document.write("<strong>a = </strong>" + a + "<br>");
+document.write("<strong>b = </strong>" + b + "<br>");
+</script>
+
+
+<!-------->
+<!--Exo4-->
+<!-------->
+
+<p class="title">EXO 4<br> ----- <br>Additionner la variable a et b</p>
+
+<script>
+var res=a+b;
+document.write(a + " + " + b + " = " + res);
+</script>
+
+
+<!-------->
+<!--Exo5-->
+<!-------->
+
+<p class="title">EXO 5<br> ----- <br>Afficher un nombre aléatoire entre 1 et 100 ;</p>
+
+<script>
+var random100exo5=rand(1,100);
+document.write("<strong>random number (1-100) =</strong> " + random100exo5);
+</script>
+
+
+<!-------->
+<!--Exo6-->
+<!-------->
+
+<p class="title">EXO 6<br> ----- <br>Afficher un nombre aléatoire entre 5 et 10 ;</p>
+
+<script>
+var randomexo6=rand(5,10);
+document.write("<strong>random number (5-10) =</strong> " + randomexo6);
+</script>
+
+
+<!-------->
+<!--Exo7-->
+<!-------->
+
+<p class="title">EXO 7<br> ----- <br>Faire une fonction Addition</p>
+
+<script>
+function additionner(val1,val2){
+    return val1+val2;
+    }
+
+var resultexo7=additionner(a,b);
+document.write(a +" + " + b + " = " + resultexo7);
+</script>
+
+
+<!-------->
+<!--Exo8-->
+<!-------->
+<p class="title">EXO 8<br> ----- <br>Générer un chiffre aléatoire entre 1 et 100,<br> "je suis nul" si x < 50<br> sinon "je suis bon"</p>
+
+<script>
+var randomexo8=rand(1,100);
+if (randomexo8<50){
+    document.write(randomexo8 + ", donc je suis nul");
+}
+else{
+    document.write(randomexo8 + ", donc je suis bon");
+}
+</script>
+
+
+<!-------------->
+<!--Exo 9 & 10-->
+<!-------------->
+<p class="title">EXO 9 & 10<br> ----- <br>Faire une fonction qui prend en paramètre x (nombre aléatoire entre 0 et 5), <br>si x==1 alors afficher AAAA,<br> si x==2 alors afficher BBBB,<br> si x==2 alors afficher CCCC,<br> si x==4 alors afficher DDDD,<br> sinon je suis une perruche.<br> Faire avec condition si (9) et switch case (10).</p>
+<p class="custom-text">condition si</p>
+
+
+<script>
+function fonctionTest(x)
+{   
+    if (x < 5 && x > 0) {
+        
+        if (x == 1) {
+            return "AAAAA";
+        } else if (x == 2) {
+            return "BBBBB";
+        } else if (x == 3) {
+            return "CCCCC";
+        } else if (x == 4) {
+            return "DDDDD";
+        }
+    } 
+    else {
+        return "J'ai pas envie d'etre une perruche :'(";
+    }
+}
+
+var randomexo9 = fonctionTest(rand(0,5))
+document.write(randomexo9);
+</script>
+
+<p class="custom-text">switch case</p>
+
+<script>
+function switchtest(x)
+{
+    switch (x) {
+        case 1:
+            return "AAAAA";
+        break;
+        case 2:
+            return "BBBBB";
+        break;
+        case 3:
+            return "CCCCC";
+        break;
+        case 4:
+            return "DDDDD";
+        break;
+        default:
+            return "J'ai pas envie d'etre une perruche :'(";
+        break;
+    }
+}
+var randomexo10 = switchtest(rand(0,5));
+document.write(randomexo10);
+</script>
+
+
+<!-------------------->
+<!--Exo 11 & 12 & 13-->
+<!-------------------->
+<p class="title">EXO 11 & 12 & 13<br> ----- <br>Générer 10 valeur aléatoire, et afficher les 10 variable<br>Ajouter 10 valeur aléatoire dans un tableau<br>Parcourir ce tableau et afficher l'addition de tous ces résultats</p>
+
+<p class="custom-text">Générer 10 nombres aléatoires</p>
+
+<script>
+for(i = 0; i<10; i++){
+    document.write("<strong>index " + (i+1) + " = </strong>" + rand(0,1000) + "<br>");
+}
+</script>
+
+<p class="custom-text">Générer 10 valeurs dans un tableau et afficher leur somme</p>
+
+<script>
+    var randomexo11 = []
+    for(i=0; i<10; i++){    //générer 10 valeurs dans un tableau
+        randomexo11[i] = rand(0,1000);
+    }
+
+    for(i=0; i<randomexo11.length; i++){    //afficher 10 valeurs du tableau
+        sommeexo11 = randomexo11[i]
+    }
+    document.write("<strong>somme = </strong>" + sommeexo11 + "<br>");
+</script>
